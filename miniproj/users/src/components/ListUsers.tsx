@@ -11,7 +11,7 @@ export const ListUsers = ({users}: UserList) => {
                 <tbody>
                 {Array.isArray(users) ? users.map((user: User) => (
                     <tr key={user.id}>
-                        <td><Link to="/users/edit/{user.id}">{user.id}</Link></td>
+                        <td><Link to={`/users/edit/${user.id}`}>{user.id}</Link></td>
                         <td>{user.name}</td>
                         <td>{user.age} years old</td>
                     </tr>
