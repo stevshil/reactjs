@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 import { ListUsers } from './components/ListUsers'
@@ -29,7 +27,7 @@ function App() {
   ])
 
   // Callback function to handle user addition
-  const handleUserAdded = (updatedUsers: { id: number; name: string; email: string }[]) => {
+  const handleUserAdded = (updatedUsers: { id: number; name: string; age: number }[]) => {
     setUsers(updatedUsers); // Update the users state in App
     console.log('Users updated in App:', updatedUsers);
   };
@@ -51,7 +49,7 @@ function App() {
       <Routes>
           <Route path="/users" element={<ListUsers users={users} />} />
           <Route path="/users/add" element={<AddUser users={users} onUserAdded={handleUserAdded} />} />
-          <Route path="/users/edit/:userid" element={<EditUser users={users} setUsers={setUsers} onUpdateUser={handleUpdateUser} />} />
+          <Route path="/users/edit/:userid" element={<EditUser users={users} onUpdateUser={handleUpdateUser} />} />
           <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
       </Router>

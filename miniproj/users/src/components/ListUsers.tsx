@@ -1,11 +1,11 @@
-import {UserList, User} from './interfaces/UserList';
+import {UserList, User} from '../interfaces/Users';
 import { Link } from 'react-router-dom';
 
 export const ListUsers = ({users}: UserList) => {
     console.log("ListUsers: ",typeof(users));
     console.log("ListUsers: ",(users));
     return (
-        <div align="center">
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <h2>User List</h2>
             <table>
                 <tbody>

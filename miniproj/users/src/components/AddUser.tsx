@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { UserList } from './interfaces/UserList';
+import { UserList } from '../interfaces/Users';
 
 export const AddUser = ({ users, onUserAdded }: UserList & { onUserAdded: (users: { id: number; name: string; age: number }[]) => void }) => {
-    const [user, setUser] = useState({ name: '', age: null });
+    const [user, setUser] = useState({ name: '', age: 0 });
     const [newusers, setUsers] = useState(users); // Ensure users is an array
     console.log("New users:", newusers);
 
@@ -31,7 +31,7 @@ export const AddUser = ({ users, onUserAdded }: UserList & { onUserAdded: (users
         onUserAdded(updatedUsers);
 
         // Reset the form
-        setUser({ name: '', age: '' });
+        setUser({ name: '', age: 0 });
         console.log('Updated users:', updatedUsers);
     };
 

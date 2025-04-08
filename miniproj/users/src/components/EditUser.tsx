@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User } from './ListUsers';
+import { User } from '../interfaces/Users';
 import { useParams } from 'react-router-dom';
 
 interface EditUserProps {
@@ -12,7 +12,7 @@ export const EditUser: React.FC<EditUserProps> = ({ users, onUpdateUser }) => {
     const user = users?.find((u) => u.id === Number(userid));
 
     const [name, setName] = useState(user?.name || '');
-    const [age, setAge] = useState(user?.age || '');
+    const [age, setAge] = useState<number>(user?.age || 0);
 
     useEffect(() => {
         if (user) {
@@ -48,9 +48,9 @@ export const EditUser: React.FC<EditUserProps> = ({ users, onUpdateUser }) => {
                 <label>
                     Age:
                     <input
-                        type="text"
+                        type="number"
                         value={age}
-                        onChange={(e) => setAge(e.target.value)}
+                        onChange={(e) => setAge(Number(e.target.value))}
                     />
                 </label>
             </div>
