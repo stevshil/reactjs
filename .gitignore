@@ -4,6 +4,9 @@ node_modules/
 # Build output
 build/
 
+# Production
+dist/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
