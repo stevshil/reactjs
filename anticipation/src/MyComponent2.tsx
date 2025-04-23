@@ -14,7 +14,7 @@ const MyComponent2 = () => {
     };
 
     return (
-        <div className='container'>
+        <div className='container txtchg'>
 
             <div className="btn-container">
                 <button className='btn' onClick={handleClick}>
@@ -24,7 +24,7 @@ const MyComponent2 = () => {
                     Change Text</button>
             </div>
 
-            <div style={isPending ?  { opacity: 0 } :  { opacity: isVisible ? 1 : 0 }}>
+            <div className="fade" style={isPending ?  { opacity: 0 } :  { opacity: isVisible ? 1 : 0 }}>
                 <h1>{text}</h1>
             </div>
 
